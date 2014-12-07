@@ -2,8 +2,8 @@
 layout: post
 title: "Developer's Machine: Lightsaber vs Woodsaber"
 date: 2014-12-06 21:08:23 +0200
-comments: true
-categories: hardware, management, it
+comments: false
+categories: [hardware, management, IT]
 ---
 
 Software development is a very competitive area and it is at utmost importance to keep the process efficient. When a new project arrives, we take into account our skills and knowledge to analyze risks, challenges and the schedule. Developers naturally assume that they can work as fast as they can think and type, however sometimes your development machine is not so eager.
@@ -13,7 +13,7 @@ Do you remember what had happened to Qui Gon when he faced Darth Maul? He was MU
 
 {% img center /images/posts/darthmaul_vs_quigon.jpg %}
 
-Whenever I wait more than enough because of a slow computer, I sense disturbence in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:
+Whenever I wait more than enough because of a slow computer, I sense disturbance in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:
 
 - loose focus and start chatting, looking out of the window, surfing the web etc.
 - get frustrated, and care less about the project
