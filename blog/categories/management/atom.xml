@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Management | HARDCODE]]></title>
   <link href="http://makcakaya.github.io/blog/categories/management/atom.xml" rel="self"/>
   <link href="http://makcakaya.github.io/"/>
-  <updated>2014-12-07T02:19:15+02:00</updated>
+  <updated>2014-12-07T02:22:00+02:00</updated>
   <id>http://makcakaya.github.io/</id>
   <author>
     <name><![CDATA[Mert Akcakaya]]></name>
@@ -20,7 +20,7 @@
     <id>http://makcakaya.github.io/blog/2014/12/06/developers-machine-lightsaber-vs-woodsaber</id>
     <content type="html"><![CDATA[<p>Software development is a very competitive area and it is at utmost importance to keep the process efficient. When a new project arrives, we take into account our skills and knowledge to analyze risks, challenges and the schedule. Developers naturally assume that they can work as fast as they can think and type, however sometimes your development machine is not so eager.</p>
 
-<p>Do you remember what had happened to Qui Gon when he faced Darth Maul? He was MULTITHREADED by the Sith Lord with his dual-blade. Poor Qui Gon did not stand a chance with that crappy single blade :(</p>
+<p>Do you remember what had happened to Qui Gon when he faced Darth Maul? He was MULTITHREADED by the Sith Lord with his dual-blade. Poor Qui Gon did not stand a chance with that crappy single-blade :(</p>
 
 <!-- more -->
 
