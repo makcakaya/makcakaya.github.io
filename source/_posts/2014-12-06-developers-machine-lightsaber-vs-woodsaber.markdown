@@ -27,7 +27,7 @@ Buying a better machine, almost in every situation, costs less than missing the 
 
 Some of the arguments I hear against this idea:  
 
-- "An average computer today is 10.000 TRILLION TIMES THE SPEED OF LIGHT PER SECOND faster than the ones were 10 years ago." Then go ahead and work on Ms-Dos. The complexity of software systems are rapidly increase over time and developer tools demand more power.
+- "An average computer today is 10.000 TRILLION TIMES THE SPEED OF LIGHT PER SECOND faster than the ones were 10 years ago." Then go ahead and work on Ms-Dos. The complexity of software systems are increasing rapidly and developer tools demand more power.
 - "Renewing computers every 2-3 years would require more IT staff and it costs too much." An experienced IT professional can assemble and setup more than a dozen of development machines in one day. If the company does not have an IT professional, then it should not be too hard for a developer to do it himself.
 - "We don't always have that much of cash flow". This maybe a valid argument only if there is no better way to cut down the expenses. You should always keep in mind that your production efficiency can be increased greatly just by upgrading or renewing the hardware.
 
