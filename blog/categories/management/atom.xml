@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[HARDCODE]]></title>
-  <link href="http://makcakaya.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Management, | HARDCODE]]></title>
+  <link href="http://makcakaya.github.io/blog/categories/management/atom.xml" rel="self"/>
   <link href="http://makcakaya.github.io/"/>
   <updated>2014-12-07T02:13:51+02:00</updated>
   <id>http://makcakaya.github.io/</id>
@@ -25,7 +25,7 @@
 <!-- more -->
 
 
-<p><img class="center" src="http://makcakaya.github.io/images/posts/darthmaul_vs_quigon.jpg"></p>
+<p><img class="center" src="/images/posts/darthmaul_vs_quigon.jpg"></p>
 
 <p>Whenever I wait more than enough because of a slow computer, I sense disturbence in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:</p>
 
