@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Hardware, | HARDCODE]]></title>
+  <title><![CDATA[Category: Hardware | HARDCODE]]></title>
   <link href="http://makcakaya.github.io/blog/categories/hardware/atom.xml" rel="self"/>
   <link href="http://makcakaya.github.io/"/>
-  <updated>2014-12-07T02:13:51+02:00</updated>
+  <updated>2014-12-07T02:19:15+02:00</updated>
   <id>http://makcakaya.github.io/</id>
   <author>
     <name><![CDATA[Mert Akcakaya]]></name>
@@ -27,7 +27,7 @@
 
 <p><img class="center" src="/images/posts/darthmaul_vs_quigon.jpg"></p>
 
-<p>Whenever I wait more than enough because of a slow computer, I sense disturbence in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:</p>
+<p>Whenever I wait more than enough because of a slow computer, I sense disturbance in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:</p>
 
 <ul>
 <li>loose focus and start chatting, looking out of the window, surfing the web etc.</li>
