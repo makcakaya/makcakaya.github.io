@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Invest in your Light Saber"
+date: 2014-11-29 18:49:12 +0200
+comments: false
+categories: hardware computer
+---
+
+I had a Tatung computer back when I was 8 years old. It would load into MS-Dos and I would run Windows 3.1 or better Lotus: The Ultimate Challange. Everything was good and I was happy.
+
+Now, we are developing applications, typicaly on Windows. I generally have following programs open during the day:
+
+  - 2 instances of VS2013 with many plugins
+  - a ConEmu window (love it) with multiple tabs and panes
+  - a text editor like Notepad++ or lately Atom
+  - multiple Windows Explorer windows
+  - a database management tool (i.e. Sql Management Studio, Database.Net is a great tool)
+  - services.msc window
+  - SourceTree
+  - an Outlook client
+  - Chrome with many tabs
+  - a few .pdf or Word documents
+  - antivirus and firewall
+  - and maybe even web server, emulator or virtual machine
+
+It is not hard to guess that they demand a lot of computing and I/O resources. For now having less than 8 gb ram and an Intel quad-core processor is a suicide for a developer using this kind of a dev environment.
