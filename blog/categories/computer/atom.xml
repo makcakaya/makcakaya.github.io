@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Computer | HARDCODE]]></title>
+  <link href="http://makcakaya.github.io/blog/categories/computer/atom.xml" rel="self"/>
+  <link href="http://makcakaya.github.io/"/>
+  <updated>2014-12-08T23:18:34+02:00</updated>
+  <id>http://makcakaya.github.io/</id>
+  <author>
+    <name><![CDATA[Mert Akcakaya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Invest in Your Light Saber]]></title>
+    <link href="http://makcakaya.github.io/blog/2014/11/29/test-post/"/>
+    <updated>2014-11-29T18:49:12+02:00</updated>
+    <id>http://makcakaya.github.io/blog/2014/11/29/test-post</id>
+    <content type="html"><![CDATA[<p>I had a Tatung computer back when I was 8 years old. It would load into MS-Dos and I would run Windows 3.1 or better Lotus: The Ultimate Challange. Everything was good and I was happy.</p>
+
+<p>Now, we are developing applications, typicaly on Windows. I generally have following programs open during the day:</p>
+
+<ul>
+<li>2 instances of VS2013 with many plugins</li>
+<li>a ConEmu window (love it) with multiple tabs and panes</li>
+<li>a text editor like Notepad++ or lately Atom</li>
+<li>multiple Windows Explorer windows</li>
+<li>a database management tool (i.e. Sql Management Studio, Database.Net is a great tool)</li>
+<li>services.msc window</li>
+<li>SourceTree</li>
+<li>an Outlook client</li>
+<li>Chrome with many tabs</li>
+<li>a few .pdf or Word documents</li>
+<li>antivirus and firewall</li>
+<li>and maybe even web server, emulator or virtual machine</li>
+</ul>
+
+
+<p>It is not hard to guess that they demand a lot of computing and I/O resources. For now having less than 8 gb ram and an Intel quad-core processor is a suicide for a developer using this kind of a dev environment.</p>
+]]></content>
+  </entry>
+  
+</feed>
