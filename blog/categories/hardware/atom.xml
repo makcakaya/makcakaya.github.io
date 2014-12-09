@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Hardware | HARDCODE]]></title>
   <link href="http://makcakaya.github.io/blog/categories/hardware/atom.xml" rel="self"/>
   <link href="http://makcakaya.github.io/"/>
-  <updated>2014-12-08T23:18:34+02:00</updated>
+  <updated>2014-12-09T22:47:53+02:00</updated>
   <id>http://makcakaya.github.io/</id>
   <author>
     <name><![CDATA[Mert Akcakaya]]></name>
@@ -58,35 +58,6 @@
 <p><a href="http://blog.codinghorror.com/the-programmers-bill-of-rights/">The Programmers Bill of Rights</a><br/>
 <a href="http://blog.codinghorror.com/hardware-is-cheap-programmers-are-expensive/">Hardware is Cheap, Programmers Are Expensive</a><br/>
 <a href="http://programmers.stackexchange.com/questions/93983/why-dont-all-companies-buy-developers-the-best-hardware">Stackoverflow-Why Don&rsquo;t All Companies Buy Developers The Best Hardware</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Invest in Your Light Saber]]></title>
-    <link href="http://makcakaya.github.io/blog/2014/11/29/test-post/"/>
-    <updated>2014-11-29T18:49:12+02:00</updated>
-    <id>http://makcakaya.github.io/blog/2014/11/29/test-post</id>
-    <content type="html"><![CDATA[<p>I had a Tatung computer back when I was 8 years old. It would load into MS-Dos and I would run Windows 3.1 or better Lotus: The Ultimate Challange. Everything was good and I was happy.</p>
-
-<p>Now, we are developing applications, typicaly on Windows. I generally have following programs open during the day:</p>
-
-<ul>
-<li>2 instances of VS2013 with many plugins</li>
-<li>a ConEmu window (love it) with multiple tabs and panes</li>
-<li>a text editor like Notepad++ or lately Atom</li>
-<li>multiple Windows Explorer windows</li>
-<li>a database management tool (i.e. Sql Management Studio, Database.Net is a great tool)</li>
-<li>services.msc window</li>
-<li>SourceTree</li>
-<li>an Outlook client</li>
-<li>Chrome with many tabs</li>
-<li>a few .pdf or Word documents</li>
-<li>antivirus and firewall</li>
-<li>and maybe even web server, emulator or virtual machine</li>
-</ul>
-
-
-<p>It is not hard to guess that they demand a lot of computing and I/O resources. For now having less than 8 gb ram and an Intel quad-core processor is a suicide for a developer using this kind of a dev environment.</p>
 ]]></content>
   </entry>
   
