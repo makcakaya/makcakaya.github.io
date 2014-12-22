@@ -3,7 +3,11 @@ layout: post
 title: "Developer's Machine: Lightsaber vs Woodsaber"
 date: 2014-12-06 21:08:23 +0200
 comments: false
-categories: [hardware, management, IT]
+categories: ["management"]
+
+keywords: "software, development, developer, efficiency, management"
+description: "Role of good hardware in developer's efficiency"
+
 ---
 
 Software development is a very competitive area and it is at utmost importance to keep the process efficient. When a new project arrives, we take into account our skills and knowledge to analyze risks, challenges and the schedule. Developers naturally assume that they can work as fast as they can think and type, however sometimes your development machine is not so eager.
