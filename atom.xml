@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[HARDCODE]]></title>
+  <link href="http://makcakaya.github.io/atom.xml" rel="self"/>
+  <link href="http://makcakaya.github.io/"/>
+  <updated>2014-12-22T02:28:35+02:00</updated>
+  <id>http://makcakaya.github.io/</id>
+  <author>
+    <name><![CDATA[Mert Akcakaya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Developer's Machine: Lightsaber vs Woodsaber]]></title>
+    <link href="http://makcakaya.github.io/blog/2014/12/06/developers-machine-lightsaber-vs-woodsaber/"/>
+    <updated>2014-12-06T21:08:23+02:00</updated>
+    <id>http://makcakaya.github.io/blog/2014/12/06/developers-machine-lightsaber-vs-woodsaber</id>
+    <content type="html"><![CDATA[<p>Software development is a very competitive area and it is at utmost importance to keep the process efficient. When a new project arrives, we take into account our skills and knowledge to analyze risks, challenges and the schedule. Developers naturally assume that they can work as fast as they can think and type, however sometimes your development machine is not so eager.</p>
+
+<p>Do you remember what had happened to Qui Gon when he faced Darth Maul? He was MULTITHREADED by the Sith Lord with his dual-blade. Poor Qui Gon did not stand a chance with that crappy single-blade :(</p>
+
+<!-- more -->
+
+
+<p><img class="center" src="http://makcakaya.github.io/images/posts/darthmaul_vs_quigon.jpg"></p>
+
+<p>Whenever I wait more than enough because of a slow computer, I sense disturbance in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:</p>
+
+<ul>
+<li>loose focus and start chatting, looking out of the window, surfing the web etc.</li>
+<li>get frustrated, and care less about the project</li>
+<li>tend to avoid creating another process in the system that could potentially increase the quality of the work like checking out a document, inspecting another reference code, or testing more just because that would further slow the machine.</li>
+<li>stop doing things asynchronously and wait the build to complete before opening that document or wait idle while running the tests</li>
+<li>make more mistakes because the computer can&rsquo;t handle the input entered</li>
+</ul>
+
+
+<p>And your manager will say: &ldquo;Good, let the hate flow through you&rdquo;. As we know those kind of empires only last a few episodes.</p>
+
+<p>Buying a better machine, almost in every situation, costs less than missing the deadline, deploying buggy software, loosing developer&rsquo;s ambition or just the cost of lost developer time. A developer also should be able to select his own keyboard and mouse. 2 monitors are mandatory and 3 is better. A comfortable chair is also very important.</p>
+
+<p>Some of the arguments I hear against this idea:</p>
+
+<ul>
+<li>&ldquo;An average computer today is 10.000 TRILLION TIMES THE SPEED OF LIGHT PER SECOND faster than the ones were 10 years ago.&rdquo; Then go ahead and work on Ms-Dos. The complexity of software systems are increasing rapidly and developer tools demand more power.</li>
+<li>&ldquo;Renewing computers every 2-3 years would require more IT staff and it costs too much.&rdquo; An experienced IT professional can assemble and setup more than a dozen of development machines in one day. If the company does not have an IT professional, then it should not be too hard for a developer to do it himself.</li>
+<li>&ldquo;We don&rsquo;t always have that much of cash flow&rdquo;. This maybe a valid argument only if there is no better way to cut down the expenses. You should always keep in mind that your production efficiency can be increased greatly just by upgrading or renewing the hardware.</li>
+</ul>
+
+
+<p>Keep the developers happy, and they will create better products in less time.</p>
+
+<p>Here are a few links about this subject:</p>
+
+<p><a href="http://blog.codinghorror.com/the-programmers-bill-of-rights/">The Programmers Bill of Rights</a><br/>
+<a href="http://blog.codinghorror.com/hardware-is-cheap-programmers-are-expensive/">Hardware is Cheap, Programmers Are Expensive</a><br/>
+<a href="http://programmers.stackexchange.com/questions/93983/why-dont-all-companies-buy-developers-the-best-hardware">Stackoverflow-Why Don&rsquo;t All Companies Buy Developers The Best Hardware</a></p>
+]]></content>
+  </entry>
+  
+</feed>
