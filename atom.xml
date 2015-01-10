@@ -4,7 +4,7 @@
   <title><![CDATA[HARDCODE]]></title>
   <link href="http://makcakaya.github.io/atom.xml" rel="self"/>
   <link href="http://makcakaya.github.io/"/>
-  <updated>2014-12-25T03:38:01+02:00</updated>
+  <updated>2015-01-10T21:53:49+02:00</updated>
   <id>http://makcakaya.github.io/</id>
   <author>
     <name><![CDATA[Mert Akcakaya]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fountain of Lore: Scrum as a Learning Model]]></title>
+    <link href="http://makcakaya.github.io/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/"/>
+    <updated>2015-01-07T14:34:59+02:00</updated>
+    <id>http://makcakaya.github.io/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model</id>
+    <content type="html"><![CDATA[<p>To be successful in learning, one must have a plan. What do you want to learn and what materials are relevant? How do you order them? Do you study them in parallel or one at a time? How do you keep track of the progress you&rsquo;ve made? Should you keep a history of what you&rsquo;ve studied?</p>
+
+<h3>Enter Continuous Learning, the fountain of lore!</h3>
+
+
+<p>I use Git and <a href="http://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs">Visual Studio Online</a> to help me throughout the learning process. I choose Git because I use it everyday and I can use it on both Windows and OS X (Unlike TFVC). As you probably know Microsoft provides a free VS Online option that is more than enough for personal use. As a Scrum tool I use VS Online.</p>
+
+<div style='text-align: center;'><span class='caption-wrapper'><img src='http://makcakaya.github.io/images/posts/saruman_learning_csharp.png' width='' height='' title='Saruman indexing his ebook collection of fire magic.' ><span class='caption-text' style='width: ''' >Saruman indexing his ebook collection of fire magic.</span></span></div>
+
+
+<!-- more -->
+
+
+<p>Let&rsquo;s get to the action. I create a project with Scrum model to contain all study materials or subjects. Let&rsquo;s call it &ldquo;Learning Pro&rdquo;, a learning path for our software development profession. I generally read books so I create a Feature (Epic in Scrum) for every book I own or every online course I&rsquo;m enrolled in. Feature is a higher level notion that can&rsquo;t be handled or estimated right away without chopping it into smaller parts, so it is a good match for a book or other kinds of learning materials. You can easily check back the materials that you&rsquo;ve completed later in Features section.</p>
+
+<p><img class="left" src="http://makcakaya.github.io/images/posts/features.png"></p>
+
+<p>Take C# In Depth as an example, a great book by Jon Skeet. There are 16 chapters and so we need to create a Backlog Item for each chapter. A typical chapter can be studied in 1-2 hours so you can divide them easily into Tasks. Before going into Tasks, let me show you the Backlog Items under the Feature C# In Depth.</p>
+
+<p><img class="center" src="http://makcakaya.github.io/images/posts/features_to_pbi.png"></p>
+
+<p>Studying a chapter is often not enough to internalize it for me. I like to run an eye over it a day after and do some exercises or write some code about it. There are typically 3 tasks Study, Summary, and Exercise. Studying is studying, nothing unclear about it. I love to write a summary of a chapter the day after and push it to VS Online using Git. Most of the time there are also exercises that involve writing code, they get pushed too.</p>
+
+<p>Now it&rsquo;s time to estimate all tasks and create a Sprint that is a week long. In that sprint determine the Capacity, the amount of hours you can spare that week. Then handle each task in order and try to have them finished in time. Burndown Chart shines again (ignore the fact that I&rsquo;m behind the schedule this sprint).</p>
+
+<p><img class="center" src="http://makcakaya.github.io/images/posts/burndown_chart.png"></p>
+
+<h3>Collect The Loot</h3>
+
+
+<p>Using Scrum on cloud provides:</p>
+
+<ul>
+<li>You are able to access the materials and save the progress you&rsquo;ve made everywhere and easily.</li>
+<li>You can determine a path to follow by using hierarchical structure (Feature-Backlog Item-Task) and by ordering materials.</li>
+<li>You can plan and estimate better by examining your now quantifiable records. You will have a better idea what you will be able to learn in a year for example.</li>
+<li>Motivation is probably the most important gain. Burndown Chart reflects your performance and motivates you if you fall behind.</li>
+<li>Another benefit is keeping a history of your effort. You can come back and see the summaries or the code you&rsquo;ve written.</li>
+<li>Although I&rsquo;ve never done before, you can share the output(summaries, notes, code, links etc) of yours with others. Reading your summaries or inspecting the code you&rsquo;ve written can be beneficial for your friends or colleagues.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Developer's Machine: Lightsaber vs Woodsaber]]></title>
