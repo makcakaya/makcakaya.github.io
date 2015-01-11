@@ -13,9 +13,10 @@ description: "Role of good hardware in developer's efficiency"
 Software development is a very competitive area and it is at utmost importance to keep the process efficient. When a new project arrives, we take into account our skills and knowledge to analyze risks, challenges and the schedule. Developers naturally assume that they can work as fast as they can think and type, however sometimes your development machine is not so eager.
 
 Do you remember what had happened to Qui Gon when he faced Darth Maul? He was MULTITHREADED by the Sith Lord with his dual-blade. Poor Qui Gon did not stand a chance with that crappy single-blade :(
-<!-- more -->
 
 {% img center /images/posts/darthmaul_vs_quigon.jpg %}
+
+<!-- more -->
 
 Whenever I wait more than enough because of a slow computer, I sense disturbance in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:
 
