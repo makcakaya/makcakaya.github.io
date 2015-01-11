@@ -1,24 +1,110 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[HARDCODE]]></title>
-  <link href="http://makcakaya.github.io/atom.xml" rel="self"/>
-  <link href="http://makcakaya.github.io/"/>
-  <updated>2015-01-11T20:19:11+02:00</updated>
-  <id>http://makcakaya.github.io/</id>
-  <author>
-    <name><![CDATA[Mert Akcakaya]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mutants in Your Code - HARDCODE</title>
+  <meta name="author" content="Mert Akcakaya">
 
   
-  <entry>
-    <title type="html"><![CDATA[Mutants in Your Code]]></title>
-    <link href="http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code/"/>
-    <updated>2015-01-11T18:41:53+02:00</updated>
-    <id>http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code</id>
-    <content type="html"><![CDATA[<p>Immutable objects are very popular in concurrency models because immutable objects are naturally thread safe because the state an object cannot be corrupted by multiple threads. As C# developers we can also benefit from immutability. C# has a keyword just for that, <em>readonly</em>. We can also utilize readonly property mechanism with private setters.</p>
+  <meta name="description" content="Ensuring some field or variable is assigned only once." />
+
+  
+  <meta name="keywords" content="immutable, object, mutabilty" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="HARDCODE" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- Mert Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-57451090-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HARDCODE</a></h1>
+  
+    <h2>Code, bugs, tools and developers&#8230;</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:makcakaya.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mutants in Your Code</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-11T18:41:53+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Immutable objects are very popular in concurrency models because immutable objects are naturally thread safe because the state an object cannot be corrupted by multiple threads. As C# developers we can also benefit from immutability. C# has a keyword just for that, <em>readonly</em>. We can also utilize readonly property mechanism with private setters.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -254,104 +340,140 @@
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Fountain of Lore: Scrum as a Learning Model]]></title>
-    <link href="http://makcakaya.github.io/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/"/>
-    <updated>2015-01-07T14:34:59+02:00</updated>
-    <id>http://makcakaya.github.io/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model</id>
-    <content type="html"><![CDATA[<p>To be successful in learning, one must have a plan. What do you want to learn and what materials are relevant? How do you order them? Do you study them in parallel or one at a time? How do you keep track of the progress you&rsquo;ve made? Should you keep a history of what you&rsquo;ve studied?</p>
 
-<h3>Enter Continuous Learning, the fountain of lore!</h3>
+<span class="byline author vcard">Posted by <span class="fn">Mert Akcakaya</span></span>
+
+      
 
 
-<p>I use Git and <a href="http://www.visualstudio.com/en-us/products/what-is-visual-studio-online-vs">Visual Studio Online</a> to help me throughout the learning process. I choose Git because I use it everyday and I can use it on both Windows and OS X (Unlike TFVC). As you probably know Microsoft provides a free VS Online option that is more than enough for personal use. As a Scrum tool I use VS Online.</p>
-
-<div style='text-align: center;'><span class='caption-wrapper'><img src='http://makcakaya.github.io/images/posts/saruman_learning_csharp.png' width='' height='' title='Saruman indexing his ebook collection of fire magic.' ><span class='caption-text' style='width: ''' >Saruman indexing his ebook collection of fire magic.</span></span></div>
 
 
-<!-- more -->
+<time class='entry-date' datetime='2015-01-11T18:41:53+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:41 pm</span></time>
+      
 
-
-<p>Let&rsquo;s get to the action. I create a project with Scrum model to contain all study materials or subjects. Let&rsquo;s call it &ldquo;Learning Pro&rdquo;, a learning path for our software development profession. I generally read books so I create a Feature (Epic in Scrum) for every book I own or every online course I&rsquo;m enrolled in. Feature is a higher level notion that can&rsquo;t be handled or estimated right away without chopping it into smaller parts, so it is a good match for a book or other kinds of learning materials. You can easily check back the materials that you&rsquo;ve completed later in Features section.</p>
-
-<p><img class="left" src="http://makcakaya.github.io/images/posts/features.png"></p>
-
-<p>Take C# In Depth as an example, a great book by Jon Skeet. There are 16 chapters and so we need to create a Backlog Item for each chapter. A typical chapter can be studied in 1-2 hours so you can divide them easily into Tasks. Before going into Tasks, let me show you the Backlog Items under the Feature C# In Depth.</p>
-
-<p><img class="center" src="http://makcakaya.github.io/images/posts/features_to_pbi.png"></p>
-
-<p>Studying a chapter is often not enough to internalize it for me. I like to run an eye over it a day after and do some exercises or write some code about it. There are typically 3 tasks Study, Summary, and Exercise. Studying is studying, nothing unclear about it. I love to write a summary of a chapter the day after and push it to VS Online using Git. Most of the time there are also exercises that involve writing code, they get pushed too.</p>
-
-<p>Now it&rsquo;s time to estimate all tasks and create a Sprint that is a week long. In that sprint determine the Capacity, the amount of hours you can spare that week. Then handle each task in order and try to have them finished in time. Burndown Chart shines again (ignore the fact that I&rsquo;m behind the schedule this sprint).</p>
-
-<p><img class="center" src="http://makcakaya.github.io/images/posts/burndown_chart.png"></p>
-
-<h3>Collect The Loot</h3>
-
-
-<p>Using Scrum on cloud provides:</p>
-
-<ul>
-<li>You are able to access the materials and save the progress you&rsquo;ve made everywhere and easily.</li>
-<li>You can determine a path to follow by using hierarchical structure (Feature-Backlog Item-Task) and by ordering materials.</li>
-<li>You can plan and estimate better by examining your now quantifiable records. You will have a better idea what you will be able to learn in a year for example.</li>
-<li>Motivation is probably the most important gain. Burndown Chart reflects your performance and motivates you if you fall behind.</li>
-<li>Another benefit is keeping a history of your effort. You can come back and see the summaries or the code you&rsquo;ve written.</li>
-<li>Although I&rsquo;ve never done before, you can share the output(summaries, notes, code, links etc) of yours with others. Reading your summaries or inspecting the code you&rsquo;ve written can be beneficial for your friends or colleagues.</li>
-</ul>
-
-]]></content>
-  </entry>
+<span class="categories">
   
-  <entry>
-    <title type="html"><![CDATA[Developer's Machine: Lightsaber vs Woodsaber]]></title>
-    <link href="http://makcakaya.github.io/blog/2014/12/06/developers-machine-lightsaber-vs-woodsaber/"/>
-    <updated>2014-12-06T21:08:23+02:00</updated>
-    <id>http://makcakaya.github.io/blog/2014/12/06/developers-machine-lightsaber-vs-woodsaber</id>
-    <content type="html"><![CDATA[<p>Software development is a very competitive area and it is at utmost importance to keep the process efficient. When a new project arrives, we take into account our skills and knowledge to analyze risks, challenges and the schedule. Developers naturally assume that they can work as fast as they can think and type, however sometimes your development machine is not so eager.</p>
-
-<p>Do you remember what had happened to Qui Gon when he faced Darth Maul? He was MULTITHREADED by the Sith Lord with his dual-blade. Poor Qui Gon did not stand a chance with that crappy single-blade :(</p>
-
-<!-- more -->
-
-
-<p><img class="center" src="http://makcakaya.github.io/images/posts/darthmaul_vs_quigon.jpg"></p>
-
-<p>Whenever I wait more than enough because of a slow computer, I sense disturbance in the force. It causes stress, anger and distorts the groove of development. Not only the work is delayed by x seconds because of the slowness, but also developers:</p>
-
-<ul>
-<li>loose focus and start chatting, looking out of the window, surfing the web etc.</li>
-<li>get frustrated, and care less about the project</li>
-<li>tend to avoid creating another process in the system that could potentially increase the quality of the work like checking out a document, inspecting another reference code, or testing more just because that would further slow the machine.</li>
-<li>stop doing things asynchronously and wait the build to complete before opening that document or wait idle while running the tests</li>
-<li>make more mistakes because the computer can&rsquo;t handle the input entered</li>
-</ul>
-
-
-<p>And your manager will say: &ldquo;Good, let the hate flow through you&rdquo;. As we know those kind of empires only last a few episodes.</p>
-
-<p>Buying a better machine, almost in every situation, costs less than missing the deadline, deploying buggy software, loosing developer&rsquo;s ambition or just the cost of lost developer time. A developer also should be able to select his own keyboard and mouse. 2 monitors are mandatory and 3 is better. A comfortable chair is also very important.</p>
-
-<p>Some of the arguments I hear against this idea:</p>
-
-<ul>
-<li>&ldquo;An average computer today is 10.000 TRILLION TIMES THE SPEED OF LIGHT PER SECOND faster than the ones were 10 years ago.&rdquo; Then go ahead and work on Ms-Dos. The complexity of software systems are increasing rapidly and developer tools demand more power.</li>
-<li>&ldquo;Renewing computers every 2-3 years would require more IT staff and it costs too much.&rdquo; An experienced IT professional can assemble and setup more than a dozen of development machines in one day. If the company does not have an IT professional, then it should not be too hard for a developer to do it himself.</li>
-<li>&ldquo;We don&rsquo;t always have that much of cash flow&rdquo;. This maybe a valid argument only if there is no better way to cut down the expenses. You should always keep in mind that your production efficiency can be increased greatly just by upgrading or renewing the hardware.</li>
-</ul>
-
-
-<p>Keep the developers happy, and they will create better products in less time.</p>
-
-<p>Here are a few links about this subject:</p>
-
-<p><a href="http://blog.codinghorror.com/the-programmers-bill-of-rights/">The Programmers Bill of Rights</a><br/>
-<a href="http://blog.codinghorror.com/hardware-is-cheap-programmers-are-expensive/">Hardware is Cheap, Programmers Are Expensive</a><br/>
-<a href="http://programmers.stackexchange.com/questions/93983/why-dont-all-companies-buy-developers-the-best-hardware">Stackoverflow-Why Don&rsquo;t All Companies Buy Developers The Best Hardware</a></p>
-]]></content>
-  </entry>
+    <a class='category' href='/blog/categories/c-number/'>c#</a>
   
-</feed>
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code/" data-via="" data-counturl="http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/" title="Previous Post: Fountain of Lore: Scrum as a learning model">&laquo; Fountain of Lore: Scrum as a learning model</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/11/mutants-in-your-code/">Mutants in Your Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/">Fountain of Lore: Scrum as a Learning Model</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/06/developers-machine-lightsaber-vs-woodsaber/">Developer&#8217;s Machine: Lightsaber vs Woodsaber</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/makcakaya">@makcakaya</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'makcakaya',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Mert Akcakaya -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -91,6 +91,73 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2015/01/11/mutants-in-your-code/">Mutants in Your Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-11T18:41:53+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:41 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Immutable objects are very popular in concurrency models because immutable objects are naturally thread safe because the state an object cannot be corrupted by multiple threads. As C# developers we can also benefit from immutability. C# has a keyword just for that, <em>readonly</em>. We can also utilize readonly property mechanism with private setters.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="c1">// A field assigned in declaration statement</span>
+</span><span class='line'><span class="k">private</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">_num</span> <span class="p">=</span> <span class="m">20</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">public</span> <span class="nf">MyClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">_num</span> <span class="p">=</span> <span class="n">num</span><span class="p">;</span> <span class="c1">// Assign in constructor</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Use a readonly property</span>
+</span><span class='line'><span class="k">public</span> <span class="kt">int</span> <span class="n">Num</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">get</span><span class="p">{</span> <span class="k">return</span> <span class="n">_num</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="k">private</span> <span class="k">set</span><span class="p">{</span> <span class="n">_num</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Or you just don&#39;t introduce a private setter</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/01/11/mutants-in-your-code/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/">Fountain of Lore: Scrum as a Learning Model</a></h1>
     
     
@@ -175,6 +242,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/11/mutants-in-your-code/">Mutants in Your Code</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/">Fountain of Lore: Scrum as a Learning Model</a>

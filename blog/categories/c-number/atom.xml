@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C# | HARDCODE]]></title>
+  <link href="http://makcakaya.github.io/blog/categories/c-number/atom.xml" rel="self"/>
+  <link href="http://makcakaya.github.io/"/>
+  <updated>2015-01-11T20:19:11+02:00</updated>
+  <id>http://makcakaya.github.io/</id>
+  <author>
+    <name><![CDATA[Mert Akcakaya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mutants in Your Code]]></title>
+    <link href="http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code/"/>
+    <updated>2015-01-11T18:41:53+02:00</updated>
+    <id>http://makcakaya.github.io/blog/2015/01/11/mutants-in-your-code</id>
+    <content type="html"><![CDATA[<p>Immutable objects are very popular in concurrency models because immutable objects are naturally thread safe because the state an object cannot be corrupted by multiple threads. As C# developers we can also benefit from immutability. C# has a keyword just for that, <em>readonly</em>. We can also utilize readonly property mechanism with private setters.</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="c1">// A field assigned in declaration statement</span>
+</span><span class='line'><span class="k">private</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">_num</span> <span class="p">=</span> <span class="m">20</span><span class="p">;&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">public</span> <span class="n">MyClass</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">_num</span> <span class="p">=</span> <span class="n">num</span><span class="p">;</span> <span class="c1">// Assign in constructor</span>
+</span><span class='line'><span class="p">}&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="c1">// Use a readonly property</span>
+</span><span class='line'><span class="k">public</span> <span class="kt">int</span> <span class="n">Num</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">get</span><span class="p">{</span> <span class="k">return</span> <span class="p">&lt;</span><span class="n">em</span><span class="p">&gt;</span><span class="n">num</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="k">private</span> <span class="k">set</span><span class="p">{</span> <span class="p">&lt;/</span><span class="n">em</span><span class="p">&gt;</span><span class="n">num</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Or you just don&amp;rsquo;t introduce a private setter</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<!-- more -->
+
+
+<p>These are all good approaches but they don&rsquo;t accompany you to the depths of API design hell! From now on, I will approach the notion of immutability from another perspective. Classical definition of <em>immutable object</em> says that the object&rsquo;s state is not changeable after it has been initialized. I find it valuable to be able to change the state of an object after it has been constructed but only once.</p>
+
+<p><em>readonly</em> keyword ensures that a field can be assigned where it is declared or in the relevant constructor(static or instance). What if I want a field to be assigned even after it has been instantiated but ensured to be assigned only once?</p>
+
+<p>Readonly properties are phenomenal, I use them everywhere appropriate. But they too don&rsquo;t solve the problem. Take a look at the code:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">public</span> <span class="nf">MyClass</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="p">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">Initialize</span><span class="p">();</span>
+</span><span class='line'><span class="p">}&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">private</span> <span class="k">void</span> <span class="n">Initialize</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">_num</span> <span class="p">=</span> <span class="m">11</span><span class="p">;</span> <span class="c1">// DON&amp;rsquo;T EVEN THINK ABOUT CHANGING THIS VALUE!!!</span>
+</span><span class='line'>    <span class="p">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'><span class="p">}&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="c1">// What if someone else (Better Developer) comes and adds a method to your library like this</span>
+</span><span class='line'><span class="c1">// He has enabled users to assign a new value while you assert that you only assign once</span>
+</span><span class='line'><span class="k">public</span> <span class="k">void</span> <span class="nf">SomeMethod</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="p">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">_num</span> <span class="p">=</span> <span class="m">12</span><span class="p">;</span> <span class="c1">// I like 12 better(Better Developer)</span>
+</span><span class='line'>    <span class="p">&amp;</span><span class="n">hellip</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Readonly property mechanism fails you here, because both the private setter and the backing field is always there to change the state of the object.</p>
+
+<p>What do we do now? We can add an extra <em>boolean</em> field that keeps track of the assignment. But then if you have 5 fields that should be assigned only once, you have to add 5 extra fields to back them up and it would clutter the class definition.</p>
+
+<p>I&rsquo;ve defined a very basic generic type called <em>WriteOnce<T></em> for this purpose. Check it out:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'>    <span class="c1">/// &lt;summary&gt;</span>
+</span><span class='line'>    <span class="c1">/// Objects of this class limits their values to be assigned only once.</span>
+</span><span class='line'>    <span class="c1">/// After assigning the value the first time, any further assignments will throw exceptions.</span>
+</span><span class='line'>    <span class="c1">/// &lt;/summary&gt;</span>
+</span><span class='line'>    <span class="c1">/// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">WriteOnce</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="cp">#region Field&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span>    <span class="k">private</span> <span class="n">T</span> <span class="n">_value</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">private</span> <span class="kt">bool</span> <span class="n">_isLocked</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="cp">#endregion</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="cp">#region Properties</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'>    <span class="c1">/// Gets/Sets the value</span>
+</span><span class='line'>    <span class="c1">/// Throws ReadonlyException if assigned for more than once</span>
+</span><span class='line'>    <span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'>    <span class="k">public</span> <span class="n">T</span> <span class="n">Value</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_value</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>        <span class="k">set</span>
+</span><span class='line'>        <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">IsLocked</span><span class="p">)</span> <span class="p">{</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">WriteOnceException</span><span class="p">();</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">_value</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">_isLocked</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsLocked</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_isLocked</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="cp">#endregion</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="cp">#region Ctor</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">public</span> <span class="nf">WriteOnce</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">public</span> <span class="nf">WriteOnce</span><span class="p">(</span><span class="n">T</span> <span class="k">value</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="cp">#endregion</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><em>WriteOnce</em> ensures that as the developer of a class, you assign a field only once. If you plan to enable users assign values to fields but again only once, you can do that too. Now using this type I can define the previous class like this:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">public</span> <span class="k">class</span> <span class="nc">MyClass</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Will throw WriteOnceException if assigned more than once</span>
+</span><span class='line'>    <span class="k">private</span> <span class="k">readonly</span> <span class="n">WriteOnce</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">_num</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WriteOnce</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();&lt;/</span><span class="n">p</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span><span class="k">public</span> <span class="kt">int</span> <span class="n">Num</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_num</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="k">set</span> <span class="p">{</span> <span class="n">_num</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Or don&#39;t provide a setter if you like</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">private</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="p">...</span>
+</span><span class='line'>    <span class="k">this</span><span class="p">.</span><span class="n">Num</span> <span class="p">=</span> <span class="m">11</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">&lt;</span><span class="n">p</span><span class="p">&gt;}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+</feed>
