@@ -31,7 +31,7 @@ public int Num
 
 These are all good approaches but they don't accompany you to the depths of API design hell! From now on, I will approach the notion of immutability from another perspective. Classical definition of *immutable object* says that the object's state is not changeable after it has been initialized. I find it valuable to be able to change the state of an object after it has been constructed but only once.
 
-*readonly* keyword ensures that a field can be assigned where it is declared or in the relevant constructor(static or instance). What if I want a field to be assigned even after it has been instantiated but ensured to be assigned only once? 
+*readonly* keyword ensures that a field can only be assigned where it is declared or in the relevant constructor(static or instance). What if I want a field to be assigned even after it has been instantiated but ensured to be assigned only once? 
 
 Readonly properties are phenomenal, I use them everywhere appropriate. But they too don't solve the problem. Take a look at the code:
 
