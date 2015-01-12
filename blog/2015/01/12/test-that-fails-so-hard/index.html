@@ -5,14 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Scrum - HARDCODE</title>
+  <title>Test That Fails So Hard - HARDCODE</title>
   <meta name="author" content="Mert Akcakaya">
 
   
-  <meta name="description" content="Category: scrum" />
+  <meta name="description" content="Stack overflow exception can kill test environment." />
 
   
-  <meta name="keywords" content="software, development, developer, code, programming, blog, meltabi, makcakaya, mert, akcakaya" />
+  <meta name="keywords" content="unit, testing, stack overflow, exception, fatal" />
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://makcakaya.github.io/blog/categories/scrum">
+  <link rel="canonical" href="http://makcakaya.github.io/blog/2015/01/12/test-that-fails-so-hard">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="HARDCODE" type="application/atom+xml">
@@ -84,35 +84,74 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Scrum</h1>
+    
+      <h1 class="entry-title">Test That Fails So Hard</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-12T23:40:07+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:40 pm</span></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&rsquo;ve added a few unit tests today and all the tests stopped running. There was no feedback about the problem, the tests just wouldn&rsquo;t run. I&rsquo;ve got suspicious first about VS 2015 and then NUnit test adapters because VS 2015 is in Preview stage and test adapters use Visual Studio SDK(which in turn may not be mature enough). Then I tried running tests using NUnit GUI runner app, no luck, it too got stuck.</p>
 
-  
-  <h2>2015</h2>
+<p>It was time to debug the test, and as soon as the debugger entered a property in one of my new classes, I realized that there was a circular call which resulted in running out of stack memory and StackOverflowException was being thrown.</p>
 
-<article>
-  
-<h1><a href="/blog/2015/01/07/fountaion-of-lore-scrum-as-a-learning-model/">Fountain of Lore: Scrum as a Learning Model</a></h1>
-<time datetime="2015-01-07T14:34:59+02:00" pubdate><span class='month'>Jan</span> <span class='day'>07</span> <span class='year'>2015</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/learning/'>learning</a>, <a class='category' href='/blog/categories/scrum/'>scrum</a></span>
-</footer>
-
-
-</article>
-
+<p>Of course this is a fatal exception that can&rsquo;t be handled by an app easily (maybe impossible?). So there was no information from the IDE that something was causing infinite loop of method calls. The next time same thing happens, I would suspect my own code instead of Visual Studio even if it is a &ldquo;Preview&rdquo; version.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Mert Akcakaya</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-01-12T23:40:07+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:40 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/testing/'>testing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://makcakaya.github.io/blog/2015/01/12/test-that-fails-so-hard/" data-via="" data-counturl="http://makcakaya.github.io/blog/2015/01/12/test-that-fails-so-hard/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/01/11/mutants-in-your-code/" title="Previous Post: Mutants in your code">&laquo; Mutants in your code</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

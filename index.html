@@ -91,6 +91,39 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2015/01/12/test-that-fails-so-hard/">Test That Fails So Hard</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-12T23:40:07+02:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:40 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve added a few unit tests today and all the tests stopped running. There was no feedback about the problem, the tests just wouldn&rsquo;t run. I&rsquo;ve got suspicious first about VS 2015 and then NUnit test adapters because VS 2015 is in Preview stage and test adapters use Visual Studio SDK(which in turn may not be mature enough). Then I tried running tests using NUnit GUI runner app, no luck, it too got stuck.</p>
+
+<p>It was time to debug the test, and as soon as the debugger entered a property in one of my new classes, I realized that there was a circular call which resulted in running out of stack memory and StackOverflowException was being thrown.</p>
+
+<p>Of course this is a fatal exception that can&rsquo;t be handled by an app easily (maybe impossible?). So there was no information from the IDE that something was causing infinite loop of method calls. The next time same thing happens, I would suspect my own code instead of Visual Studio even if it is a &ldquo;Preview&rdquo; version.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2015/01/11/mutants-in-your-code/">Mutants in Your Code</a></h1>
     
     
@@ -244,6 +277,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/12/test-that-fails-so-hard/">Test That Fails So Hard</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/01/11/mutants-in-your-code/">Mutants in Your Code</a>
